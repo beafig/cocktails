@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 25px;
+  &__title {
+    font-family: $mainFont;
+    letter-spacing: 1px;
+    font-size: 80px;
+    font-weight: 700;
+    margin-top: 15px;
+  }
+  &__logo {
+    height: 100px;
+    width: 120px;
+  }
+  &__form {
+    text-align: end;
+    position: relative;
+    bottom: 90px;
+  }
+  &__input {
+    border: 2px solid $mainColor;
+    border-radius: 5px;
+    font-family: $mainFont;
+    height: 25px;
+    width: 200px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding-top: 3px;
+  }
+  &__btn {
+    background-color: $mainColor;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
+    height: 30px;
+    margin: 0 15px;
+    font-family: $mainFont;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+}

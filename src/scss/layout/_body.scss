@@ -1,0 +1,88 @@
+.main {
+  &__section2 {
+    background-image: url("../images/background.png");
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: $mainFont;
+    min-height: 70vh;
+  }
+  &__list {
+    background-color: white;
+    width: 300px;
+    border: 5px solid $mainColor;
+    border-radius: 10px;
+    text-align: center;
+    margin: 40px;
+    &--title {
+      font-size: 30px;
+      letter-spacing: 1px;
+      font-weight: 800;
+      padding: 10px;
+    }
+    &--title2 {
+      margin-left: 85px;
+    }
+    &--message {
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: 20px;
+      margin: 5px 0;
+      padding: 0 5px;
+    }
+    &--cocktails {
+      padding-bottom: 10px;
+    }
+    &--name {
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: 20px;
+      margin: 5px 0;
+    }
+    &--name2 {
+      cursor: pointer;
+    }
+    &--img {
+      height: 170px;
+      width: 130px;
+      border: 3px solid $mainColor;
+      border-radius: 10px;
+    }
+    &--img2 {
+      cursor: pointer;
+    }
+    &--container {
+      display: flex;
+      justify-content: space-between;
+    }
+    &--btn {
+      background-color: $mainColor;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
+      height: 30px;
+      margin: 8px 15px 0;
+      font-family: $mainFont;
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+  }
+}
+
+.selected {
+  background-color: $mainColor;
+  color: white;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.fa-solid {
+  margin-left: 10px;
+  color: $mainColor;
+  padding: 0 4px;
+  border: 2px solid $mainColor;
+  border-radius: 50%;
+  cursor: pointer;
+}
