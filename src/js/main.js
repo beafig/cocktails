@@ -127,9 +127,16 @@ function handleClickList(ev) {
 
 function renderFavourites(array) {
   favouritesList.innerHTML = '';
+  let hidden = '';
   for (const eachObj of array) {
-    favouritesList.innerHTML = `<li class="js-liElement main__list--cocktails" id="${eachObj.id}"><h3 class="main__list--name">${eachObj.name}<i class="fa-solid fa-xmark js-closeIcon" id="${eachObj.id}"></i></h3> <p class="receipe">${eachObj.ingredient1} ${eachObj.measures1}</p><p class="receipe">${eachObj.ingredient2} ${eachObj.measures2}</p><p class="receipe">${eachObj.ingredient3} ${eachObj.measures3}</p><p class="receipe">${eachObj.ingredient4} ${eachObj.measures4}</p><p class="receipe">${eachObj.ingredient5} ${eachObj.measures5}</p><p class="receipe">${eachObj.ingredient6} ${eachObj.measures6}</p><p class="receipe">${eachObj.ingredient7} ${eachObj.measures7}</p><p class="receipe">${eachObj.ingredient8} ${eachObj.measures8}</p><p class="receipe">${eachObj.ingredient9} ${eachObj.measures9}</p><p class="receipe">${eachObj.instruction}</p><p class="receipe">1 oz equivale a 30ml.</p> </li>`;
+    favouritesList.innerHTML = `<li class="js-liElement main__list--cocktails" id="${eachObj.id}"><h3 class="main__list--name">${eachObj.name}<i class="fa-solid fa-xmark js-closeIcon" id="${eachObj.id}"></i></h3> <p class="receipe ${hidden}">${eachObj.ingredient1} ${eachObj.measures1}</p><p class="receipe ${hidden}">${eachObj.ingredient2} ${eachObj.measures2}</p><p class="receipe ${hidden}">${eachObj.ingredient3} ${eachObj.measures3}</p><p class="receipe ${hidden}">${eachObj.ingredient4} ${eachObj.measures4}</p><p class="receipe ${hidden}">${eachObj.ingredient5} ${eachObj.measures5}</p><p class="receipe ${hidden}">${eachObj.ingredient6} ${eachObj.measures6}</p><p class="receipe ${hidden}">${eachObj.ingredient7} ${eachObj.measures7}</p><p class="receipe ${hidden}">${eachObj.ingredient8} ${eachObj.measures8}</p><p class="receipe ${hidden}">${eachObj.ingredient9} ${eachObj.measures9}</p><p class="receipe">${eachObj.instruction}</p><p class="receipe">1 oz equivale a 30ml.</p> </li>`;
   }
+  // console.log(favCocktails[0].name);
+  // for (let i = 1; i < 10; i++) {
+  //   if (array.ingredient[i] === null && favCocktails[i].measures[i] === null) {
+  //     hidden = 'hidden';
+  //   }
+  // }
   addCloseBtn();
 }
 
@@ -150,7 +157,7 @@ function handleClickClose(ev) {
   const indexClose = favCocktails.findIndex(close => close.id === ev.currentTarget.id);
   favCocktails.splice(indexClose, 1);
   localStorage.removeItem('cocktails');
-  renderFavourites(favCocktails);
+  // renderFavourites(favCocktails);
   renderCocktails(allCocktails);
   localStorage.setItem('cocktails', JSON.stringify(favCocktails));
   console.log(favCocktails); // me devuelve un elemento más del que debería haber, el primer click funciona, al segundo si quito un elemento se vuelve a añadir al final de la lista
@@ -191,4 +198,4 @@ function addCloseBtn() {
 
 // listener para realizar busqueda al pulsar intro
 
-inputElement.addEventListener('keyup', handleIntro)
+inputElement.addEventListener('keyup', handleIntro);
