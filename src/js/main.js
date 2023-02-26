@@ -19,6 +19,7 @@ fetch(urlMargaritas)
     map(data);
     renderCocktails(allCocktails);
     addEvent();
+    console.log(data);
   });
 
 // function to create new array with some data elements using map
@@ -27,20 +28,39 @@ function map(array) {
   allCocktails = array.drinks.map((drink) => ({
     name: drink.strDrink,
     photo: drink.strDrinkThumb,
-    id: drink.idDrink
+    id: drink.idDrink,
+    ingredient1: drink.strIngredient1,
+    ingredient2: drink.strIngredient2,
+    ingredient3: drink.strIngredient3,
+    ingredient4: drink.strIngredient4,
+    ingredient5: drink.strIngredient5,
+    ingredient6: drink.strIngredient6,
+    ingredient7: drink.strIngredient7,
+    ingredient8: drink.strIngredient8,
+    ingredient9: drink.strIngredient9,
+    measures1: drink.strMeasure1,
+    measures2: drink.strMeasure2,
+    measures3: drink.strMeasure3,
+    measures4: drink.strMeasure4,
+    measures5: drink.strMeasure5,
+    measures6: drink.strMeasure6,
+    measures7: drink.strMeasure7,
+    measures8: drink.strMeasure8,
+    measures9: drink.strMeasure9,
+    instruction: drink.strInstructions
   }));
 }
 
 // search favourites in LocalStorage
 
-const localFav = JSON.parse(localStorage.getItem('cocktails'));
-function searchFav() {
-  if (localFav) {
-    favCocktails = localFav;
-    renderFavourites(favCocktails);
-  }
-}
-searchFav();
+// const localFav = JSON.parse(localStorage.getItem('cocktails'));
+// function searchFav() {
+//   if (localFav) {
+//     favCocktails = localFav;
+//     renderFavourites(favCocktails);
+//   }
+// }
+// searchFav();
 
 //function to paint list of cocktails
 
@@ -108,7 +128,7 @@ function handleClickList(ev) {
 function renderFavourites(array) {
   favouritesList.innerHTML = '';
   for (const eachObj of array) {
-    favouritesList.innerHTML += `<li class="js-liElement main__list--cocktails" id="${eachObj.id}"><h3 class="main__list--name">${eachObj.name}<i class="fa-solid fa-xmark js-closeIcon" id="${eachObj.id}"></i></h3> <img class="main__list--img img" src="${eachObj.photo}" title="${eachObj.name}" alt="${eachObj.name}" class="main__list--img"/> </li>`;
+    favouritesList.innerHTML = `<li class="js-liElement main__list--cocktails" id="${eachObj.id}"><h3 class="main__list--name">${eachObj.name}<i class="fa-solid fa-xmark js-closeIcon" id="${eachObj.id}"></i></h3> <p class="receipe">${eachObj.ingredient1} ${eachObj.measures1}</p><p class="receipe">${eachObj.ingredient2} ${eachObj.measures2}</p><p class="receipe">${eachObj.ingredient3} ${eachObj.measures3}</p><p class="receipe">${eachObj.ingredient4} ${eachObj.measures4}</p><p class="receipe">${eachObj.ingredient5} ${eachObj.measures5}</p><p class="receipe">${eachObj.ingredient6} ${eachObj.measures6}</p><p class="receipe">${eachObj.ingredient7} ${eachObj.measures7}</p><p class="receipe">${eachObj.ingredient8} ${eachObj.measures8}</p><p class="receipe">${eachObj.ingredient9} ${eachObj.measures9}</p><p class="receipe">${eachObj.instruction}</p><p class="receipe">1 oz equivale a 30ml.</p> </li>`;
   }
   addCloseBtn();
 }
